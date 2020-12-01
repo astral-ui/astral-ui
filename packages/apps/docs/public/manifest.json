@@ -1,0 +1,9 @@
+{
+  "short_name": "Core UI",
+  "name": "Core UI",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
