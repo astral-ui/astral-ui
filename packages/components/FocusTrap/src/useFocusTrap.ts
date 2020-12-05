@@ -72,7 +72,9 @@ export function useFocusTrap(containerRef: RefObject<HTMLElement>, initialFocusR
   useEffect(() => {
     resetFocus();
     return (): void => {
-      finalFocusRef?.current?.focus();
+      if (finalFocusRef && finalFocusRef.current) {
+        finalFocusRef.current.focus();
+      }
     }
   }, [resetFocus, finalFocusRef]);
 }
