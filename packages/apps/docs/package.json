@@ -1,9 +1,9 @@
 {
   "name": "@astral-ui/docs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
-    "@astral-ui/all": "^0.0.2",
+    "@astral-ui/all": "^0.0.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^3.11.0"
