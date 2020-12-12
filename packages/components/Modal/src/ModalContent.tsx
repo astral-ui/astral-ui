@@ -8,7 +8,7 @@ const baseStyle: Style = {
   borderRadius: 1,
   margin: "5vh auto",
   backgroundColor: "white.100",
-  boxShadow: 3,
+  boxShadow: "lg",
   width: "80%"
 };
 

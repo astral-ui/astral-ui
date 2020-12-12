@@ -3,7 +3,7 @@ import React, {PropsWithChildren} from "react";
 
 export const baseStyle = {
   backgroundColor: "white.100",
-  boxShadow: 2,
+  boxShadow: "md",
   padding: 6,
   borderRadius: 1
 };

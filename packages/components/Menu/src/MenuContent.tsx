@@ -13,7 +13,7 @@ const baseStyle: SystemStyleObject = {
   borderRadius: 1,
   top: "100%",
   width: "100%",
-  boxShadow: 1,
+  boxShadow: "sm",
   zIndex: 1
 };
 

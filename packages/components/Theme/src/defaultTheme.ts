@@ -3,12 +3,11 @@ export const defaultTheme = {
   sizes: ["12px", "16px", "20px", "24px", "32px", "40px", "48px"],
   radii: [0, "4px"],
   borderWidths: [0, "1px"],
-  shadows: [
-    "",
-    "0px 4px 8px rgba(26, 26, 26, 0.2)",
-    "0px 12px 32px rgba(26, 26, 26, 0.24)",
-    "0px 24px 40px rgba(26, 26, 26, 0.16)"
-  ],
+  shadows: {
+    "sm": "0px 4px 8px rgba(26, 26, 26, 0.2)",
+    "md": "0px 12px 32px rgba(26, 26, 26, 0.24)",
+    "lg": "0px 24px 40px rgba(26, 26, 26, 0.16)"
+  },
   colors: {
     primary: {
       "100": "#2648A4",

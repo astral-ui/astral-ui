@@ -12,7 +12,6 @@ import {
   useMemo,
   useRef
 } from "react";
-import ReactDOM from "react-dom";
 import {ModalContextProvider} from "./ModalContext";
 import {Style, styleToCss} from "@astral-ui/system";
 import {useFocusTrap} from "@astral-ui/focus-trap";
@@ -70,10 +69,11 @@ export const Modal = forwardRef(function Modal({styles, initialFocusRef, finalFo
 
   useFocusTrap(modalRef, initialFocusRef, finalFocusRef);
 
-  return ReactDOM.createPortal(
+  return (
     <ModalContextProvider value={{onDismiss}}>
       {/** @ts-ignore */}
       <div ref={modalRef} css={modalCss} onKeyDown={handleKeyDown} onMouseDown={handleMouseDown} role="dialog" aria-modal {...props} />
-    </ModalContextProvider>, document.body);
+    </ModalContextProvider>
+  );
 });
 

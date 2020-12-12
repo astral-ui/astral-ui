@@ -18,7 +18,7 @@ export function MenuPage(): JSX.Element {
 
   return (
     <Page title="Menu">
-      <VStack spacing={6} styles={{boxShadow: 2, borderRadius: 1, padding: 6, alignItems: "flex-start"}}>
+      <VStack spacing={6} styles={{boxShadow: "md", borderRadius: 1, padding: 6, alignItems: "flex-start"}}>
         <Menu onDismiss={(): void => {setIsOpen(false);}}>
           <Button onClick={(): void => setIsOpen(prev => !prev)}>Menu</Button>
           {isOpen && <MenuContent styles={{left: "0", width: "320px"}}>
