@@ -4,7 +4,7 @@ import {HStack} from "@astral-ui/hstack";
 import {Select} from "@astral-ui/select";
 import {CheckboxField} from "../components/CheckboxField";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {Heading} from "@astral-ui/heading";
 import {Radio} from "@astral-ui/radio";
 import {Caption} from "@astral-ui/caption";
@@ -24,16 +24,18 @@ export function RadioPage(): JSX.Element {
         <CheckboxField checked={disabled} onChange={(ev): void => setDisabled(ev.target.checked)} label={"Disabled"} />
       </HStack>
       <Card>
-        <form>
-          <VStack>
-            <HStack spacing={4}>
-              <Radio name={"radio"} size={size} disabled={disabled} defaultChecked />
-              <Radio name={"radio"} size={size} disabled={disabled} />
-            </HStack>
-            <Caption>size=&quot;{size}&quot;</Caption>
-            {disabled && <Caption>disabled</Caption>}
-          </VStack>
-        </form>
+        <CardBody>
+          <form>
+            <VStack>
+              <HStack spacing={4}>
+                <Radio name={"radio"} size={size} disabled={disabled} defaultChecked />
+                <Radio name={"radio"} size={size} disabled={disabled} />
+              </HStack>
+              <Caption>size=&quot;{size}&quot;</Caption>
+              {disabled && <Caption>disabled</Caption>}
+            </VStack>
+          </form>
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

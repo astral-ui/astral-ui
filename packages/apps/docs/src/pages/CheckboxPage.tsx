@@ -4,7 +4,7 @@ import {HStack} from "@astral-ui/hstack";
 import {Select} from "@astral-ui/select";
 import {CheckboxField} from "../components/CheckboxField";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {Heading} from "@astral-ui/heading";
 import {VStack} from "@astral-ui/vstack";
 import {Caption} from "@astral-ui/caption";
@@ -23,15 +23,17 @@ export function CheckboxPage(): JSX.Element {
         <CheckboxField checked={disabled} onChange={(ev): void => setDisabled(ev.target.checked)} label={"Disabled"} />
       </HStack>
       <Card>
-        <VStack spacing={"4px"} styles={{width: "100%"}}>
-          <HStack spacing={4} styles={{width: "100%"}}>
-            <Checkbox size={size} disabled={disabled} defaultChecked />
-            <Checkbox size={size} disabled={disabled} indeterminate />
-            <Checkbox size={size} disabled={disabled} />
-          </HStack>
-          <Caption>size=&quot;{size}&quot;</Caption>
-          {disabled && <Caption>disabled</Caption>}
-        </VStack>
+        <CardBody>
+          <VStack spacing={"4px"} styles={{width: "100%"}}>
+            <HStack spacing={4} styles={{width: "100%"}}>
+              <Checkbox size={size} disabled={disabled} defaultChecked />
+              <Checkbox size={size} disabled={disabled} indeterminate />
+              <Checkbox size={size} disabled={disabled} />
+            </HStack>
+            <Caption>size=&quot;{size}&quot;</Caption>
+            {disabled && <Caption>disabled</Caption>}
+          </VStack>
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

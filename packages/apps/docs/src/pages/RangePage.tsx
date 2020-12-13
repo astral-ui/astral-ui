@@ -3,7 +3,7 @@ import {HStack} from "@astral-ui/hstack";
 import {CheckboxField} from "../components/CheckboxField";
 import {Range} from "@astral-ui/range";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {Heading} from "@astral-ui/heading";
 
 export function RangePage(): JSX.Element {
@@ -14,7 +14,9 @@ export function RangePage(): JSX.Element {
         <CheckboxField checked={disabled} onChange={(ev): void => setDisabled(ev.target.checked)} label={"Disabled"} />
       </HStack>
       <Card>
-        <Range disabled={disabled} min={0} max={10} defaultValue={3} />
+        <CardBody>
+          <Range disabled={disabled} min={0} max={10} defaultValue={3} />
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

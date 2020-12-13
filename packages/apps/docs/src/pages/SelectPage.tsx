@@ -5,7 +5,7 @@ import {Select, SelectSize} from "@astral-ui/select";
 import {CheckboxField} from "../components/CheckboxField";
 import {Caption} from "@astral-ui/caption";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {Heading} from "@astral-ui/heading";
 
 export function SelectPage(): JSX.Element {
@@ -23,16 +23,18 @@ export function SelectPage(): JSX.Element {
       </HStack>
 
       <Card>
-        <VStack spacing={"4px"}>
-          <Select disabled={disabled} size={size}>
-            <option/>
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-          </Select>
-          <Caption>size=&quot;{size}&quot;</Caption>
-          {disabled && <Caption>disabled</Caption>}
-        </VStack>
+        <CardBody>
+          <VStack spacing={"4px"}>
+            <Select disabled={disabled} size={size}>
+              <option/>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </Select>
+            <Caption>size=&quot;{size}&quot;</Caption>
+            {disabled && <Caption>disabled</Caption>}
+          </VStack>
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

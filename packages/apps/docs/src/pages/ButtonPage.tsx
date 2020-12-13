@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
 import {Heading} from "@astral-ui/heading";
 import {ButtonPageExample} from "./ButtonPageExample";
 import ButtonPageExampleCode from "!raw-loader!./ButtonPageExample";
@@ -12,6 +11,7 @@ import {ButtonSize, ButtonVariant} from "@astral-ui/button";
 import {CheckboxField} from "../components/CheckboxField";
 import {Box} from "@astral-ui/box";
 import {Caption} from "@astral-ui/caption";
+import {Card, CardBody} from "@astral-ui/card";
 
 export function ButtonPage(): JSX.Element {
   const [tab, setTab] = useState("example");
@@ -23,41 +23,43 @@ export function ButtonPage(): JSX.Element {
 
       <Heading size={"subtitle"}>Example</Heading>
       <Card>
-        <HStack spacing={4} styles={{padding: 4}}>
-          <TextButton onClick={(): void => setTab("example")}>Example</TextButton>
-          <TextButton onClick={(): void => setTab("code")}>Code</TextButton>
-        </HStack>
-        {tab === "example" &&     <VStack spacing={4}>
-          <HStack spacing={4} styles={{alignItems: "center"}}>
-            <Select value={size} onChange={(ev): void => setSize(ev.target.value as ButtonSize)}>
-              <option value="large">Large</option>
-              <option value="medium">Medium</option>
-              <option value="small">Small</option>
-            </Select>
-            <CheckboxField checked={disabled} onChange={(ev): void => setDisabled(ev.target.checked)} label={"Disabled"} />
+        <CardBody>
+          <HStack spacing={4} styles={{padding: 4}}>
+            <TextButton onClick={(): void => setTab("example")}>Example</TextButton>
+            <TextButton onClick={(): void => setTab("code")}>Code</TextButton>
           </HStack>
+          {tab === "example" &&     <VStack spacing={4}>
+            <HStack spacing={4} styles={{alignItems: "center"}}>
+              <Select value={size} onChange={(ev): void => setSize(ev.target.value as ButtonSize)}>
+                <option value="large">Large</option>
+                <option value="medium">Medium</option>
+                <option value="small">Small</option>
+              </Select>
+              <CheckboxField checked={disabled} onChange={(ev): void => setDisabled(ev.target.checked)} label={"Disabled"} />
+            </HStack>
 
-          <HStack spacing={4} styles={{flexWrap: "wrap"}}>
-            {(["primary", "secondary", "tertiary", "destructivePrimary", "destructiveSecondary", "successPrimary", "successSecondary", "contrastPrimary", "contrastSecondary"] as ButtonVariant[]).map(variant =>
-              <Box key={variant} styles={{
-                padding: 4,
-                borderRadius: 1,
-                backgroundColor: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "white.100" : "grayscale.100",
-                color: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.100" : "white.100",
-              }}>
-                <VStack spacing={"4px"}>
-                  <ButtonPageExample disabled={disabled} size={size} variant={variant}>Placeholder</ButtonPageExample>
-                  <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>size=&quot;{size}&quot;</Caption>
-                  <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>variant=&quot;{variant}&quot;</Caption>
-                  {disabled && <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>disabled</Caption>}
-                </VStack>
-              </Box>
-            )}
-          </HStack>
-        </VStack>}
-        {tab === "code" && <pre><code style={{userSelect: "all"}}>
-          {ButtonPageExampleCode}
-        </code></pre>}
+            <HStack spacing={4} styles={{flexWrap: "wrap"}}>
+              {(["primary", "secondary", "tertiary", "destructivePrimary", "destructiveSecondary", "successPrimary", "successSecondary", "contrastPrimary", "contrastSecondary"] as ButtonVariant[]).map(variant =>
+                <Box key={variant} styles={{
+                  padding: 4,
+                  borderRadius: 1,
+                  backgroundColor: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "white.100" : "grayscale.100",
+                  color: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.100" : "white.100",
+                }}>
+                  <VStack spacing={"4px"}>
+                    <ButtonPageExample disabled={disabled} size={size} variant={variant}>Placeholder</ButtonPageExample>
+                    <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>size=&quot;{size}&quot;</Caption>
+                    <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>variant=&quot;{variant}&quot;</Caption>
+                    {disabled && <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>disabled</Caption>}
+                  </VStack>
+                </Box>
+              )}
+            </HStack>
+          </VStack>}
+          {tab === "code" && <pre><code style={{userSelect: "all"}}>
+            {ButtonPageExampleCode}
+          </code></pre>}
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

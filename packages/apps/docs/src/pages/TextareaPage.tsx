@@ -6,7 +6,7 @@ import {Select} from "@astral-ui/select";
 import {CheckboxField} from "../components/CheckboxField";
 import {Caption} from "@astral-ui/caption";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card,CardBody} from "@astral-ui/card";
 import {Heading} from "@astral-ui/heading";
 
 export function TextareaPage(): JSX.Element {
@@ -24,11 +24,13 @@ export function TextareaPage(): JSX.Element {
       </HStack>
 
       <Card>
-        <VStack spacing={"4px"}>
-          <TextArea disabled={disabled} size={size} placeholder={"Placeholder"} />
-          <Caption>size=&quot;{size}&quot;</Caption>
-          {disabled && <Caption>disabled</Caption>}
-        </VStack>
+        <CardBody>
+          <VStack spacing={"4px"}>
+            <TextArea disabled={disabled} size={size} placeholder={"Placeholder"} />
+            <Caption>size=&quot;{size}&quot;</Caption>
+            {disabled && <Caption>disabled</Caption>}
+          </VStack>
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

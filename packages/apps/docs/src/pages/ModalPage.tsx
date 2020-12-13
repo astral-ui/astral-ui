@@ -4,7 +4,7 @@ import {Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHead
 import {HStack} from "@astral-ui/hstack";
 import {TextButton} from "@astral-ui/text-button";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 
 export function ModalPage(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,27 +13,29 @@ export function ModalPage(): JSX.Element {
   return (
     <Page title="Modal">
       <Card>
-        <Button ref={finalFocusRef} onClick={(): void => setIsOpen(true)}>Modal</Button>
-        {isOpen && <Modal initialFocusRef={initialFocusRef} finalFocusRef={finalFocusRef} onDismiss={(): void => setIsOpen(false)}>
-          <ModalOverlay />
-          <form onSubmit={(ev): void => {ev.preventDefault(); ev.stopPropagation();}}>
-            <ModalContent>
-              <ModalHeader>
-                Header
-                <ModalCloseButton />
-              </ModalHeader>
-              <ModalBody>
-                Body
-              </ModalBody>
-              <ModalFooter>
-                <HStack spacing={4} styles={{alignItems: "center"}}>
-                  <Button type={"submit"} variant={"primary"} onClick={(): void => setIsOpen(false)}>OK</Button>
-                  <TextButton type={"button"} variant={"secondary"} onClick={(): void => setIsOpen(false)}>Cancel</TextButton>
-                </HStack>
-              </ModalFooter>
-            </ModalContent>
-          </form>
-        </Modal>}
+        <CardBody>
+          <Button ref={finalFocusRef} onClick={(): void => setIsOpen(true)}>Modal</Button>
+          {isOpen && <Modal initialFocusRef={initialFocusRef} finalFocusRef={finalFocusRef} onDismiss={(): void => setIsOpen(false)}>
+            <ModalOverlay />
+            <form onSubmit={(ev): void => {ev.preventDefault(); ev.stopPropagation();}}>
+              <ModalContent>
+                <ModalHeader>
+                  Header
+                  <ModalCloseButton />
+                </ModalHeader>
+                <ModalBody>
+                  Body
+                </ModalBody>
+                <ModalFooter>
+                  <HStack spacing={4} styles={{alignItems: "center"}}>
+                    <Button type={"submit"} variant={"primary"} onClick={(): void => setIsOpen(false)}>OK</Button>
+                    <TextButton type={"button"} variant={"secondary"} onClick={(): void => setIsOpen(false)}>Cancel</TextButton>
+                  </HStack>
+                </ModalFooter>
+              </ModalContent>
+            </form>
+          </Modal>}
+        </CardBody>
       </Card>
     </Page>
   );

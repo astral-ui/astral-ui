@@ -3,6 +3,7 @@ import React, {ComponentType, useMemo, useState} from 'react';
 import {
   Box,
   Caption,
+  Card,
   defaultTheme,
   Heading,
   HStack,
@@ -20,7 +21,6 @@ import {InputPage} from "./pages/InputPage";
 import {ModalPage} from "./pages/ModalPage";
 import {CheckboxPage} from "./pages/CheckboxPage";
 import {MenuPage} from "./pages/MenuPage";
-import {Card} from "./components/Card";
 import {IconButtonPage} from "./pages/IconButtonPage";
 import {SelectPage} from "./pages/SelectPage";
 import {TextareaPage} from "./pages/TextareaPage";
@@ -34,6 +34,7 @@ import {LabelPage} from "./pages/LabelPage";
 import {HeadingPage} from "./pages/HeadingPage";
 import {TextPage} from "./pages/TextPage";
 import {Page} from "./components/Page/Page";
+import {CardBody} from "@astral-ui/card";
 
 function PendingPage(title: string): ComponentType<unknown> {
   return function LabeledPendingPage(): JSX.Element {
@@ -126,55 +127,56 @@ const App: React.FC = () => {
           </Box>
           <HStack spacing={6} styles={{width: "100%"}}>
             <Card styles={{flexGrow: 0, flexShrink: 0, flexBasis: "320px", width: "320px", height: "100%"}}>
-              <HStack>
-                <IconButton styles={{borderTopRightRadius: 0, borderBottomRightRadius: 0, borderRight: 0, borderWidth: 1, borderStyle: "solid", borderColor: "grayscale.40"}} disabled><FaSearch /></IconButton>
-                <Input autoFocus styles={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0, width: "100%"}} placeholder={"Search..."} value={searchTerm} onChange={(ev): void => setSearchTerm(ev.target.value)} />
-              </HStack>
+              <CardBody>
+                <HStack>
+                  <IconButton styles={{borderTopRightRadius: 0, borderBottomRightRadius: 0, borderRight: 0, borderWidth: 1, borderStyle: "solid", borderColor: "grayscale.40"}} disabled><FaSearch /></IconButton>
+                  <Input autoFocus styles={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0, width: "100%"}} placeholder={"Search..."} value={searchTerm} onChange={(ev): void => setSearchTerm(ev.target.value)} />
+                </HStack>
 
-              {filteredGuides.length > 0 && (<>
-                <Heading size={"h5"}>Guides</Heading>
-                <VStack styles={{alignItems: "flex-start", padding: 4}}>
-                  {filteredGuides.map(page =>
-                    <TextButton key={page.name} onClick={(): void => {
-                      document.getElementById("page-" + page.name)?.scrollIntoView();
-                    }}>{page.label}</TextButton>
-                  )}
-                </VStack>
-              </>)}
+                {filteredGuides.length > 0 && (<>
+                  <Heading size={"h5"}>Guides</Heading>
+                  <VStack styles={{alignItems: "flex-start", padding: 4}}>
+                    {filteredGuides.map(page =>
+                      <TextButton key={page.name} onClick={(): void => {
+                        document.getElementById("page-" + page.name)?.scrollIntoView();
+                      }}>{page.label}</TextButton>
+                    )}
+                  </VStack>
+                </>)}
 
-              {filteredComponents.length > 0 && (<>
-                <Heading size={"h5"}>Components</Heading>
-                <VStack styles={{alignItems: "flex-start", padding: 4}}>
-                  {filteredComponents.map(page =>
-                    <TextButton key={page.name} onClick={(): void => {
-                      document.getElementById("page-" + page.name)?.scrollIntoView();
-                    }}>{page.label}</TextButton>
-                  )}
-                </VStack>
-              </>)}
+                {filteredComponents.length > 0 && (<>
+                  <Heading size={"h5"}>Components</Heading>
+                  <VStack styles={{alignItems: "flex-start", padding: 4}}>
+                    {filteredComponents.map(page =>
+                      <TextButton key={page.name} onClick={(): void => {
+                        document.getElementById("page-" + page.name)?.scrollIntoView();
+                      }}>{page.label}</TextButton>
+                    )}
+                  </VStack>
+                </>)}
 
-              {filteredHooks.length > 0 && (<>
-                <Heading size={"h5"}>Hooks</Heading>
-                <VStack styles={{alignItems: "flex-start", padding: 4}}>
-                  {filteredHooks.map(page =>
-                    <TextButton key={page.name} onClick={(): void => {
-                      document.getElementById("page-" + page.name)?.scrollIntoView();
-                    }}>{page.label}</TextButton>
-                  )}
-                </VStack>
-              </>)}
+                {filteredHooks.length > 0 && (<>
+                  <Heading size={"h5"}>Hooks</Heading>
+                  <VStack styles={{alignItems: "flex-start", padding: 4}}>
+                    {filteredHooks.map(page =>
+                      <TextButton key={page.name} onClick={(): void => {
+                        document.getElementById("page-" + page.name)?.scrollIntoView();
+                      }}>{page.label}</TextButton>
+                    )}
+                  </VStack>
+                </>)}
 
-              {filteredUtility.length > 0 && (<>
-                <Heading size={"h5"}>Utility</Heading>
-                <VStack styles={{alignItems: "flex-start", padding: 4}}>
-                  {filteredUtility.map(page =>
-                    <TextButton key={page.name} onClick={(): void => {
-                      document.getElementById("page-" + page.name)?.scrollIntoView();
-                    }}>{page.label}</TextButton>
-                  )}
-                </VStack>
-              </>)}
-
+                {filteredUtility.length > 0 && (<>
+                  <Heading size={"h5"}>Utility</Heading>
+                  <VStack styles={{alignItems: "flex-start", padding: 4}}>
+                    {filteredUtility.map(page =>
+                      <TextButton key={page.name} onClick={(): void => {
+                        document.getElementById("page-" + page.name)?.scrollIntoView();
+                      }}>{page.label}</TextButton>
+                    )}
+                  </VStack>
+                </>)}
+              </CardBody>
             </Card>
 
             <VStack spacing={6} styles={{flexGrow: 1, height: "100%"}}>

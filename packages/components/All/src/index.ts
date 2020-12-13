@@ -20,3 +20,4 @@ export * from "@astral-ui/text-button";
 export * from '@astral-ui/theme';
 export * from "@astral-ui/vstack";
 export * from "@astral-ui/focus-trap";
+export * from "@astral-ui/card";

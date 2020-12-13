@@ -10,7 +10,7 @@ import {CheckboxField} from "../components/CheckboxField";
 import {Page} from "../components/Page/Page";
 import {VStack} from "@astral-ui/vstack";
 import {Caption} from "@astral-ui/caption";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {Heading} from "@astral-ui/heading";
 
 export function IconButtonPage(): JSX.Element {
@@ -29,25 +29,27 @@ export function IconButtonPage(): JSX.Element {
       </HStack>
 
       <Card>
-        <HStack spacing={"8px"} styles={{flexWrap: "wrap"}}>
-          {(["primary", "secondary", "tertiary", "destructivePrimary", "destructiveSecondary", "successPrimary", "successSecondary", "contrastPrimary", "contrastSecondary"] as ButtonVariant[]).map(variant =>
-            <Box key={variant} styles={{
-              padding: 4,
-              borderRadius: 1,
-              backgroundColor: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "white.100" : "grayscale.100",
-              color: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.100" : "white.100",
-            }}>
-              <VStack>
-                <IconButton disabled={disabled} size={size} variant={variant}>
-                  <FaCheck />
-                </IconButton>
-                <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>size=&quot;{size}&quot;</Caption>
-                <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>variant=&quot;{variant}&quot;</Caption>
-                {disabled && <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>disabled</Caption>}
-              </VStack>
-            </Box>
-          )}
-        </HStack>
+        <CardBody>
+          <HStack spacing={"8px"} styles={{flexWrap: "wrap"}}>
+            {(["primary", "secondary", "tertiary", "destructivePrimary", "destructiveSecondary", "successPrimary", "successSecondary", "contrastPrimary", "contrastSecondary"] as ButtonVariant[]).map(variant =>
+              <Box key={variant} styles={{
+                padding: 4,
+                borderRadius: 1,
+                backgroundColor: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "white.100" : "grayscale.100",
+                color: !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.100" : "white.100",
+              }}>
+                <VStack>
+                  <IconButton disabled={disabled} size={size} variant={variant}>
+                    <FaCheck />
+                  </IconButton>
+                  <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>size=&quot;{size}&quot;</Caption>
+                  <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>variant=&quot;{variant}&quot;</Caption>
+                  {disabled && <Caption styles={{color:  !["contrastPrimary", "contrastSecondary"].includes(variant) ? "grayscale.80" : "grayscale.40"}}>disabled</Caption>}
+                </VStack>
+              </Box>
+            )}
+          </HStack>
+        </CardBody>
       </Card>
 
 

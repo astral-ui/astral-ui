@@ -4,7 +4,7 @@ import {HStack} from "@astral-ui/hstack";
 import {Select} from "@astral-ui/select";
 import {CheckboxField} from "../components/CheckboxField";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {VStack} from "@astral-ui/vstack";
 import {Caption} from "@astral-ui/caption";
 import {Heading} from "@astral-ui/heading";
@@ -24,21 +24,23 @@ export function TextButtonPage(): JSX.Element {
       </HStack>
 
       <Card>
-        <HStack>
-          {(["primary", "secondary", "destructive", "success", "contrast"] as TextButtonVariant[]).map(variant =>
-            <VStack key={variant} spacing={"4px"} styles={{
-              padding: 4,
-              borderRadius: 1,
-              backgroundColor: "contrast" !== variant ? "white.100" : "grayscale.100",
-              color: "contrast" !== variant ? "grayscale.100" : "white.100"
-            }}>
-              <TextButton disabled={disabled} size={size} variant={variant}>Placeholder</TextButton>
-              <Caption styles={{color: "contrast" !== variant ? "grayscale.80" : "grayscale.40"}}>size={size}</Caption>
-              <Caption styles={{color: "contrast" !== variant ? "grayscale.80" : "grayscale.40"}}>variant={variant}</Caption>
-              {disabled && <Caption styles={{color: "contrast" !== variant ? "grayscale.80" : "grayscale.40"}}>disabled</Caption>}
-            </VStack>
-          )}
-        </HStack>
+        <CardBody>
+          <HStack>
+            {(["primary", "secondary", "destructive", "success", "contrast"] as TextButtonVariant[]).map(variant =>
+              <VStack key={variant} spacing={"4px"} styles={{
+                padding: 4,
+                borderRadius: 1,
+                backgroundColor: "contrast" !== variant ? "white.100" : "grayscale.100",
+                color: "contrast" !== variant ? "grayscale.100" : "white.100"
+              }}>
+                <TextButton disabled={disabled} size={size} variant={variant}>Placeholder</TextButton>
+                <Caption styles={{color: "contrast" !== variant ? "grayscale.80" : "grayscale.40"}}>size={size}</Caption>
+                <Caption styles={{color: "contrast" !== variant ? "grayscale.80" : "grayscale.40"}}>variant={variant}</Caption>
+                {disabled && <Caption styles={{color: "contrast" !== variant ? "grayscale.80" : "grayscale.40"}}>disabled</Caption>}
+              </VStack>
+            )}
+          </HStack>
+        </CardBody>
       </Card>
 
 

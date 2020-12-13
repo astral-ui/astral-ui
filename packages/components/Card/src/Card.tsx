@@ -1,10 +1,9 @@
 import {Box, BoxStyle} from "@astral-ui/box";
 import React, {PropsWithChildren} from "react";
 
-export const baseStyle = {
+const baseStyle = {
   backgroundColor: "white.100",
-  boxShadow: "md",
-  padding: 6,
+  boxShadow: "sm",
   borderRadius: 1
 };
 

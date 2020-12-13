@@ -1,5 +1,5 @@
 {
-  "name": "@astral-ui/all",
+  "name": "@astral-ui/card",
   "version": "0.0.3",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
@@ -14,29 +14,8 @@
     "lint": "eslint ./src/**/*.tsx --max-warnings=0 --format=codeframe"
   },
   "dependencies": {
-    "@astral-ui/box": "^0.0.3",
-    "@astral-ui/button": "^0.0.3",
-    "@astral-ui/caption": "^0.0.3",
-    "@astral-ui/card": "^0.0.3",
-    "@astral-ui/checkbox": "^0.0.3",
-    "@astral-ui/focus-trap": "^0.0.3",
-    "@astral-ui/heading": "^0.0.3",
-    "@astral-ui/hstack": "^0.0.3",
-    "@astral-ui/icon-button": "^0.0.3",
-    "@astral-ui/input": "^0.0.3",
-    "@astral-ui/label": "^0.0.3",
-    "@astral-ui/menu": "^0.0.3",
-    "@astral-ui/modal": "^0.0.3",
-    "@astral-ui/radio": "^0.0.3",
-    "@astral-ui/range": "^0.0.3",
-    "@astral-ui/select": "^0.0.3",
-    "@astral-ui/spacer": "^0.0.3",
     "@astral-ui/system": "^0.0.3",
-    "@astral-ui/text": "^0.0.3",
-    "@astral-ui/text-button": "^0.0.3",
-    "@astral-ui/textarea": "^0.0.3",
-    "@astral-ui/theme": "^0.0.3",
-    "@astral-ui/vstack": "^0.0.3"
+    "@astral-ui/theme": "^0.0.3"
   },
   "devDependencies": {
     "@react-workspaces/react-scripts": "3.3.0-alpha-08",
@@ -45,8 +24,8 @@
     "@testing-library/user-event": "^8.0.3",
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.6",
-    "@typescript-eslint/eslint-plugin": "^2.15.0",
-    "@typescript-eslint/parser": "^2.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
     "react-scripts": "3.3.0",
     "typescript": "~4.1.2"
   },

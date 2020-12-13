@@ -7,7 +7,7 @@ import {CheckboxField} from "../components/CheckboxField";
 import {Input, InputSize} from "@astral-ui/input";
 import {Caption} from "@astral-ui/caption";
 import {Page} from "../components/Page/Page";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 
 export function InputPage(): JSX.Element {
   const [disabled, setDisabled] = useState(false);
@@ -24,11 +24,13 @@ export function InputPage(): JSX.Element {
       </HStack>
 
       <Card>
-        <VStack spacing={"4px"}>
-          <Input disabled={disabled} size={size} placeholder={"Placeholder"} />
-          <Caption>size=&quot;{size}&quot;</Caption>
-          {disabled && <Caption>disabled</Caption>}
-        </VStack>
+        <CardBody>
+          <VStack spacing={"4px"}>
+            <Input disabled={disabled} size={size} placeholder={"Placeholder"} />
+            <Caption>size=&quot;{size}&quot;</Caption>
+            {disabled && <Caption>disabled</Caption>}
+          </VStack>
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Page} from "../components/Page/Page";
 import {Caption} from "@astral-ui/caption";
-import {Card} from "../components/Card";
+import {Card, CardBody} from "@astral-ui/card";
 import {VStack} from "@astral-ui/vstack";
 import {Select} from "@astral-ui/select";
 import {HStack} from "@astral-ui/hstack";
@@ -27,10 +27,12 @@ export function HeadingPage(): JSX.Element {
       </HStack>
 
       <Card>
-        <VStack>
-          <Heading size={size}>Heading</Heading>
-          <Caption>size=&quot;{size}&quot;</Caption>
-        </VStack>
+        <CardBody>
+          <VStack>
+            <Heading size={size}>Heading</Heading>
+            <Caption>size=&quot;{size}&quot;</Caption>
+          </VStack>
+        </CardBody>
       </Card>
 
       <Heading size={"subtitle"}>Properties</Heading>
