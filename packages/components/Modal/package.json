@@ -1,6 +1,6 @@
 {
   "name": "@astral-ui/modal",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "main:src": "src/index.ts",
@@ -14,11 +14,11 @@
     "lint": "eslint ./src/**/*.tsx --max-warnings=0 --format=codeframe"
   },
   "dependencies": {
-    "@astral-ui/focus-trap": "^0.0.4",
-    "@astral-ui/system": "^0.0.4",
-    "@astral-ui/text-button": "^0.0.4",
-    "@astral-ui/theme": "^0.0.4",
-    "@astral-ui/layer": "^0.0.4"
+    "@astral-ui/focus-trap": "^0.0.5",
+    "@astral-ui/layer": "^0.0.5",
+    "@astral-ui/system": "^0.0.5",
+    "@astral-ui/text-button": "^0.0.5",
+    "@astral-ui/theme": "^0.0.5"
   },
   "devDependencies": {
     "@react-workspaces/react-scripts": "3.3.0-alpha-08",

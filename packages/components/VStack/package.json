@@ -1,6 +1,6 @@
 {
   "name": "@astral-ui/vstack",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "main:src": "src/index.ts",
@@ -13,7 +13,7 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@astral-ui/system": "^0.0.4"
+    "@astral-ui/system": "^0.0.5"
   },
   "devDependencies": {
     "@react-workspaces/react-scripts": "3.3.0-alpha-08",
