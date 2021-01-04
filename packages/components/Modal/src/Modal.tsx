@@ -15,6 +15,7 @@ import {
 import {ModalContextProvider} from "./ModalContext";
 import {Style, styleToCss} from "@astral-ui/system";
 import {useFocusTrap} from "@astral-ui/focus-trap";
+import {useLayer} from "@astral-ui/layer";
 
 const baseStyle: Style = {
   position: "fixed",
@@ -33,7 +34,8 @@ export type ModalProps = Omit<HTMLAttributes<HTMLDivElement>, "initialFocusRef" 
   onDismiss?: () => void;
 };
 export const Modal = forwardRef(function Modal({styles, initialFocusRef, finalFocusRef, onDismiss, ...props}: ModalProps, ref: Ref<HTMLDivElement>): JSX.Element {
-  const modalCss = useMemo(() => styleToCss([baseStyle, styles]), [styles])
+  const {zIndex, pushToTop} = useLayer();
+  const modalCss = useMemo(() => styleToCss([baseStyle, styles, {zIndex}]), [styles, zIndex])
   const handleKeyDown = useCallback((ev: KeyboardEvent<HTMLElement>) => {
     if (ev.key === "Escape" && onDismiss) {
       ev.stopPropagation();
@@ -70,7 +72,7 @@ export const Modal = forwardRef(function Modal({styles, initialFocusRef, finalFo
   useFocusTrap(modalRef, initialFocusRef, finalFocusRef);
 
   return (
-    <ModalContextProvider value={{onDismiss}}>
+    <ModalContextProvider value={{onDismiss, pushToTop}}>
       {/** @ts-ignore */}
       <div ref={modalRef} css={modalCss} onKeyDown={handleKeyDown} onMouseDown={handleMouseDown} role="dialog" aria-modal {...props} />
     </ModalContextProvider>

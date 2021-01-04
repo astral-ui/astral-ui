@@ -17,7 +17,8 @@
     "@astral-ui/focus-trap": "^0.0.4",
     "@astral-ui/system": "^0.0.4",
     "@astral-ui/text-button": "^0.0.4",
-    "@astral-ui/theme": "^0.0.4"
+    "@astral-ui/theme": "^0.0.4",
+    "@astral-ui/layer": "^0.0.4"
   },
   "devDependencies": {
     "@react-workspaces/react-scripts": "3.3.0-alpha-08",

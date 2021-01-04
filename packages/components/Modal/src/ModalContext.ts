@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 
 export type ModalContextState = {
   onDismiss?: () => void;
+  pushToTop: () => void;
 }
 
 const ModalContext = React.createContext<undefined | ModalContextState>(undefined);
